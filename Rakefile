@@ -24,7 +24,8 @@ task :clean do
                   'glossary.tex', 'figures', 'introduction.tex',
                   'library.bib', 'methods.tex', 'overview.tex', 'results.tex',
                   'summary.tex', 'summary_en.tex', 'supplementary1.tex',
-                  'thesis.tex', 'title.tex', '.gitignore', '.git', '.', '..']
+                  'thesis.tex', 'title.tex', '.gitignore', '.git', '.', '..',
+                  'include']
   
   # Käime läbi kõik kataloogis olevad failid
   Dir.foreach(Dir.pwd) do |file|
@@ -33,6 +34,9 @@ task :clean do
       File.delete file
     end
   end
+  
+  # Kustutame include kataloogist kõik poolkompileeritud failid
+  `rm include/*.aux`
 
 end
 
