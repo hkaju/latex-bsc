@@ -1,0 +1,14 @@
+*.aux
+*.out
+*.toc
+*.ist
+*.idx
+*.bbl
+*.bcf
+*.blg
+*.glg
+*.glo
+*.log
+*.xml
+*.gls
+thesis-blx.bib

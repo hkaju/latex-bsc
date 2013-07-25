@@ -1,0 +1,28 @@
+%
+% glossary.tex
+%
+% Fail lühendite/akronüümide ja mõistete defineerimiseks.
+% Tekstis kasutatud mõisted ilmuvad automaatselt eraldi leheküljele 
+% mõistete selgitusse.
+%
+% Kasutamine:
+%   \gls{} - väikese algustähega mõiste/lühend. Lühendi puhul ilmub esimesel
+%            korral teksti:
+%               tähendus (LHND)
+%            Edasisel kasutamisel tekitab see ainult lühendi.
+%   \Gls{} - samasugune nagu \gls{}, suure algustähega
+%   \glspl{}, \Glspl{} - mitmuse vormid eelnevatest
+%
+
+% Akronüüm koos nii lühendi kui ka selle tähenduse mitmustega
+\newacronym[\glsshortpluralkey={KTA-d},longplural=kolmetähelised akronüümid]{kta}{KTA}{kolmetäheline akronüüm}
+
+% Lihtsalt akronüüm ilma mitmusteta
+\newacronym{aim}{AIM}{akronüüm ilma mitmuseta}
+
+% Tavaline mõiste
+\newglossaryentry{tavaline}
+{
+  name=tavaline mõiste,
+  description={tavalise mõiste veel tavalisem seletus}
+}

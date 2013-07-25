@@ -1,0 +1,111 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\linespread{1.5}
+\usepackage[version=3]{mhchem}
+\usepackage{amsmath}
+%\usepackage{biblatex}
+\usepackage{SIunits}
+\usepackage[estonian]{babel}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{fullpage}
+\usepackage[firstinits=true,abbreviate=false,sorting=none,backend=bibtex]{biblatex}
+\usepackage[labelfont={bf,small},textfont={small,it},width=0.8\textwidth]{caption}
+\usepackage{subcaption}
+\usepackage{pdfpages}
+\usepackage[nonumberlist]{glossaries}
+\makeglossaries
+\usepackage{imakeidx}
+\makeindex
+\usepackage[title,titletoc]{appendix}
+\usepackage{breakurl}
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+%\captionsetup{}{}
+
+\renewcommand*{\multinamedelim}{\addcomma\space}
+\renewcommand*{\finalnamedelim}{\addcomma\space}
+
+\renewcommand*{\newunitpunct}{\addcomma\space}
+
+\DeclareFieldFormat*{title}{#1}
+\DeclareFieldFormat{journaltitle}{#1}
+
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{%
+  }{%
+    \printtext{\bibstring{in}\intitlepunct}%
+  }%
+}
+
+\renewbibmacro*{volume+number+eid}{%
+  \printfield{volume}%
+  \setunit*{\addnbspace}%
+  \printfield{number}%
+  \setunit{\addcomma\space}%
+  \printfield{eid}}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+
+\renewcommand*{\bibpagespunct}{\addspace}
+
+\DeclareFieldFormat{pages}{#1}
+
+\renewbibmacro*{publisher+location+date}{%
+  \printlist{publisher}%
+  \setunit*{\addcomma\space}%
+  \printlist{location}%
+  \setunit*{\addcomma\space}%
+  \usebibmacro{date}%
+  \newunit}
+
+\AtBeginDocument{\renewcommand\refname{Kasutatud kirjandus}}
+\AtBeginDocument{\renewcommand{\contentsname}{Sisukord}}
+\AtBeginDocument{\renewcommand{\glossaryname}{Lühendid}}
+\renewcommand*{\glspostdescription}{}
+
+\bibliography{library}
+\include{glossary}
+
+\title{Tartu Ülikooli bakalaureusetöö}
+
+\author{Hendrik Kaju}
+\begin{document}
+
+  % Impordime tiitellehe
+	\include{title}
+	
+	% Eemaldame leheküljenumbri?
+  \thispagestyle{empty}
+	
+  \clearpage
+  \pagestyle{plain}
+  % 
+  \tableofcontents
+
+	\clearpage
+	\printglossaries
+	\addcontentsline{toc}{section}{Lühendid}
+	
+	\include{introduction}
+	
+  \include{overview}
+	
+  \include{methods}
+	
+  \include{results}
+	
+  \include{summary}
+
+	\include{acknowledgements}
+	
+	\include{summary_en}
+	
+  \printbibliography
+
+	\include{supplementary1}
+\end{document}

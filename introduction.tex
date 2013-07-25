@@ -1,0 +1,36 @@
+%
+% introduction.tex
+%
+% Sissejuhatus
+%
+
+\section{Sissejuhatus}
+
+\subsection{Mis see on?}
+
+Tegemist on 2013. aastal Keemia Instituudis kaitstud bakalaureusetöö vormistusnäidisega.
+Kui ma hakkasin tööd kirjutama, ei leidnud ma ühtegi terviklikku LaTeXis vormistatud lõputöö näidist ja pidin seetõttu otsast peale alustama.
+Loodetavasti on tulevastel LaTeXi-huvilistel töökirjutamine/vormistamine veidi lihtsam.
+
+\subsection{Kasutamine}
+Tööga on kaasas `Rakefile`, mis lihtsustab mõnevõrra kompileerimist.
+Selle kasutamiseks peab olema paigaldatud Ruby ja `rake`.
+
+\begin{verbatim}
+    gem install rake
+\end{verbatim}
+
+\LaTeX-i failide kompileerimiseks saad kasutada käsku `rake compile` ja 
+töökataloogi puhastamiseks ajutistest failidest `rake clean`.
+Tulemus on failis `thesis.pdf`.
+
+\subsection{Struktuur}
+
+Põhifail on `thesis.tex`.
+Tiitelleht ja kõik peatükid on eraldi failides.
+Failid on võimaluste piires kommenteeritud.
+
+\subsection{Litsents}
+
+Töö on avaldatud MITi litsentsi all.
+Täpsemalt saab lugeda failist `LICENSE`.
